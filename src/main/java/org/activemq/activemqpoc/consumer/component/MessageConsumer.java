@@ -13,6 +13,6 @@ public class MessageConsumer {
 
     @JmsListener(destination = "activemqpoc-queue")
     public void messageListener(SystemMessage systemMessage) {
-        LOGGER.info("Message received. {}" + systemMessage);
+        LOGGER.info("Message received. {}", systemMessage);
     }
 }
