@@ -8,29 +8,29 @@ public class SystemMessage implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
 
-    private String source;
-    private String message;
+    private String orderID;
+    private String status;
 
-    public String getSource() {
-        return source;
+    public String getOrderID() {
+        return orderID;
     }
 
-    public void setSource(String source) {
-        this.source = source;
+    public void setOrderID(String orderID) {
+        this.orderID = orderID;
     }
 
-    public String getMessage() {
-        return message;
+    public String getStatus() {
+        return status;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     @Override
     public String toString() {
-        return "SystemMessage {source=" + source + '\'' +
-                ", message=" + message + '\'' +
+        return "SystemMessage {orderID=" + orderID + '\'' +
+                ", status=" + status + '\'' +
                 "}";
     }
 }

@@ -15,12 +15,11 @@ public class PublishController {
     @Autowired
     private JmsTemplate jmsTemplate;
 
-    @PostMapping("/publishMessage")
-    public ResponseEntity<String> publishMessage(@RequestBody SystemMessage systemMessage) {
-
+    @PostMapping("/order/updateStatus")
+    public ResponseEntity<String> updateOrderStatus(@RequestBody SystemMessage systemMessage) {
         try {
             jmsTemplate.convertAndSend("activemqpoc-queue", systemMessage);
-            return new ResponseEntity<>("Sent", HttpStatus.OK);
+            return new ResponseEntity<>("Order status updated", HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
